@@ -19,7 +19,7 @@ Recipe.propTypes = {
   id: PropTypes.string,
   title: PropTypes.string,
   instructions: PropTypes.string,
-  ingredients: PropTypes.arr,
+  ingredients: PropTypes.array,
   origin: PropTypes.string,
   mealType: PropTypes.string,
   rating: PropTypes.number,

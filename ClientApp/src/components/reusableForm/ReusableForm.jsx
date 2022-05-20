@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 // import './reusableForm.css';
-import Button from 'react-bootstrap/Button';
+import Button from '@mui/material/Button';
+import Rating from "@mui/material/Rating";
 import Form from 'react-bootstrap/Form';
 
 export default function ReusableForm(props) {
@@ -31,12 +32,19 @@ export default function ReusableForm(props) {
           <Form.Label>Cultural Origin:</Form.Label>
           <Form.Control type="origin" name="origin" placeholder="What type of food is it?"/>
         </Form.Group>
-        <Form.Group className='mb-3'>
+        {/* <Form.Group className='mb-3'>
           <Form.Label>Rating:</Form.Label>
           <Form.Control type="rating" name="rating" placeholder="0-5 stars"/>
-        </Form.Group>
-        <Button variant="outline-success" type="submit">{props.buttonText}</Button>
+        </Form.Group> */}
       </Form>
+      <Rating 
+        name="half-rated" 
+        // getLabelText={getLabelText} 
+        // value={value} 
+        defaultValue={2.5} 
+        precision={0.5} 
+        size="large"/><br/>
+        {/* <Button variant="outline-success" type="submit">{props.buttonText}</Button> */}
       </div>
     </React.Fragment>
     // </>
