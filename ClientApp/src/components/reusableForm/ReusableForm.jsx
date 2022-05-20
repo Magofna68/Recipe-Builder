@@ -4,9 +4,13 @@ import PropTypes from 'prop-types';
 import Button from '@mui/material/Button';
 import Rating from "@mui/material/Rating";
 import Form from 'react-bootstrap/Form';
+// import ComboBox from './AutoComplete';
+import ComboBox from './AutoComplete';
+import MultipleSelectCheckmarks from './MealSelection';
 
 export default function ReusableForm(props) {
-  
+
+
   return (
     // <>
     <React.Fragment>
@@ -16,6 +20,8 @@ export default function ReusableForm(props) {
           <Form.Label>Title:</Form.Label>
           <Form.Control type="title" name="title" placeholder="Enter Recipe Title" />
         </Form.Group>
+        <ComboBox options={props.mealTypeArray}/><br/>
+        <MultipleSelectCheckmarks />
         <Form.Group className="mb-3">
           <Form.Label>Instructions:</Form.Label>
           <Form.Control as="textarea" rows={3} type="instructions" name="instructions" placeholder="What steps are required?" />
@@ -24,10 +30,10 @@ export default function ReusableForm(props) {
           <Form.Label>Ingredients:</Form.Label>
           <Form.Control type="ingredients" name="ingredients" placeholder="What does the recipe call for?" />
         </Form.Group>
-        <Form.Group className='mb-3'>
+        {/* <Form.Group className='mb-3'>
           <Form.Label>Meal Type:</Form.Label>
           <Form.Control type="mealType" name="mealType" placeholder="Breakfast, Lunch, Dinner..."/>
-        </Form.Group>
+        </Form.Group> */}
         <Form.Group className='mb-3'>
           <Form.Label>Cultural Origin:</Form.Label>
           <Form.Control type="origin" name="origin" placeholder="What type of food is it?"/>
@@ -43,7 +49,7 @@ export default function ReusableForm(props) {
         // value={value} 
         defaultValue={2.5} 
         precision={0.5} 
-        size="large"/><br/>
+        size="large"/><br/><br/>
         {/* <Button variant="outline-success" type="submit">{props.buttonText}</Button> */}
       </div>
     </React.Fragment>
