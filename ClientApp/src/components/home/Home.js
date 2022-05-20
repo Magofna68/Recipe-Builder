@@ -46,7 +46,7 @@ export class Home extends Component {
     } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = 
       <NewRecipeForm />
-      buttonText="Add Recipe"
+      buttonText="Return to Recipe List"
     } else {
       currentlyVisibleState = 
       <RecipeList 

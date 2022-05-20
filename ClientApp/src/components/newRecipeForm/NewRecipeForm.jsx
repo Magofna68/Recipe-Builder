@@ -18,6 +18,7 @@ export default function NewRecipeForm(props) {
 
   return (
     <>
+      <h1>What're we creating today?</h1><hr/>
       <div className="formContainer">
         <ReusableForm 
           formSubmissionHandler={handleNewRecipeFormSubmission}
