@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-import './reusableForm.css';
+// import './reusableForm.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 

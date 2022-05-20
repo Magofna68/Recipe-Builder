@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './home.scss';
 import RecipeList from '../recipeList/RecipeList';
+import EditRecipeForm from '../editRecipe/EditRecipeForm';
+import NewRecipeForm from '../newRecipeForm/NewRecipeForm';
 
 export class Home extends Component {
   constructor(props) {

@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types';
+import ReusableForm from '../reusableForm/ReusableForm';
 
 export default function EditRecipeForm(props) {
   const { recipe } = props;
@@ -18,7 +19,9 @@ export default function EditRecipeForm(props) {
   }
 
   return (
-    <div>EditRecipeForm</div>
+    <ReusableForm
+      formSubmissionHandler={handleEditRecipeFormSubmission}
+      buttonText="Update Recipe" />
   )
 }
 
