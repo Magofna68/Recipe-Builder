@@ -40,6 +40,12 @@ export class Home extends Component {
     });
   }
 
+  handleChangingSelectedRecipe = (id) => {
+    const selectedRecipe = this.state.mainRecipeList.filter(recipe => recipe.id === id[0]);
+    this.setState({selectedRecipe: selectedRecipe});
+  }
+
+
   render () {
     let currentlyVisibleState = null;
     let buttonText = null;
@@ -50,7 +56,7 @@ export class Home extends Component {
       buttonText = "Return to Recipe List"
     } else if (this.state.selectedRecipe != null) {
       currentlyVisibleState = 
-      <RecipeDetail />
+      <RecipeDetail recipe={this.state.selectedRecipe} />
       buttonText= "Return to Recipe List"
     } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = 
@@ -60,6 +66,7 @@ export class Home extends Component {
     } else {
       currentlyVisibleState = 
       <RecipeList 
+        onRecipeSelection={this.handleChangingSelectedRecipe}
         recipeList={this.state.mainRecipeList} />
       buttonText="Add Recipe";
   }

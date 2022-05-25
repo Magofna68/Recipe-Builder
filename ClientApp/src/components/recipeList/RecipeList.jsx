@@ -5,19 +5,23 @@ import PropTypes from 'prop-types';
 
 export default function RecipeList(props) {
 
+  
   return (
     <>
       <h1>Recipe List</h1>
-      {props.recipeList.map((recipe, index) =>
+      <hr/>
+      {props.recipeList.map((recipe) =>
         <Recipe
-          // id={recipe.id}
+          //function being passed down through prop drilling from Home -- onRecipeSelection
+          whenRecipeClicked={props.onRecipeSelection}
+          id={recipe.id}
           title={recipe.title}
           instructions={recipe.instructions}
           ingredients={recipe.ingredients}
           origin={recipe.origin}
           mealType={recipe.mealType}
           rating={recipe.rating}
-          key={index}
+          key={recipe.id}
         />
       )}
     </>
