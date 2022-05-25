@@ -10,7 +10,7 @@ export class Home extends Component {
   constructor(props) {
     super(props);
     this.state ={
-      selectedRecipe: null,
+      selectedRecipe: {},
       editing: false,
       mainRecipeList: [],
       formVisibleOnPage: false,
@@ -40,8 +40,10 @@ export class Home extends Component {
     });
   }
 
+  // being saved into array rather than object -- find bug:
   handleChangingSelectedRecipe = (id) => {
     const selectedRecipe = this.state.mainRecipeList.filter(recipe => recipe.id === id[0]);
+    console.log(selectedRecipe);
     this.setState({selectedRecipe: selectedRecipe});
   }
 

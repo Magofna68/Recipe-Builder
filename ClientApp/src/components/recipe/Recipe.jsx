@@ -17,12 +17,14 @@ export default function Recipe(props) {
   );
 }
 
+// will need to update ingredients prop type to match array of numerous
+// ingredients and measurements being added to recipe
 Recipe.propTypes = {
   id: PropTypes.string,
   title: PropTypes.string,
   instructions: PropTypes.string,
-  ingredients: PropTypes.array,
+  ingredients: PropTypes.string,
   origin: PropTypes.string,
   mealType: PropTypes.string,
-  rating: PropTypes.number,
+  rating: PropTypes.string,
 }
