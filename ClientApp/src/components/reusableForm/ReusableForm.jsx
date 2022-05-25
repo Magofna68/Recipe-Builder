@@ -1,19 +1,43 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types';
 // import './reusableForm.css';
 import Button from 'react-bootstrap/Button';
 import Rating from "@mui/material/Rating";
 import Form from 'react-bootstrap/Form';
 // import ComboBox from './AutoComplete';
-import ComboBox from './AutoComplete';
+import ComboBox from './ComboBox';
 import MultipleSelectCheckmarks from './MealSelection';
 
 export default function ReusableForm(props) {
+  const [ value, setValue ] = useState(null);
+  console.log(value)
+
+
+  const cuisineOriginArray = [
+    {title: 'American', value: 'American'},
+    {title: 'Chinese', value: 'Chinese'},
+    {title: 'Comfort', value: 'Comfort'},
+    {title: 'French', value: 'French'},
+    {title: 'Greek', value: 'Greek'},
+    {title: 'Italian', value: 'Italian'},
+    {title: 'Indian', value: 'Indian'},
+    {title: 'Japanese', value: 'Japanese'},
+    {title: 'Mediterranean', value: 'Mediterranean'},
+    {title: 'Oriental', value: 'Oriental'},
+    {title: 'Spanish', value: 'Spanish'},
+    {title: 'Thai', value: 'Thai'},
+    {title: 'Other', value: 'Other'},
+  ];
+
+  const handleAddingFoodOriginClick = (newValues) => {
+    const updatedValues = {...value}.concat(newValues);
+    setValue(updatedValues);
+    console.log(value)
+  }
 
 
   return (
-    // <>
-    <React.Fragment>
+    <>
       <br/>
       <div className="form-center">
       <Form onSubmit={props.formSubmissionHandler}>
@@ -23,9 +47,14 @@ export default function ReusableForm(props) {
         </Form.Group>
         <Form.Group className="mb-3">
           {/* <Form.Label>Meal Type:</Form.Label> */}
-          <MultipleSelectCheckmarks />
+          <MultipleSelectCheckmarks type="mealTypes" name="mealTypes" placeholder="Meal Type:"/>
         </Form.Group>
-        <ComboBox />
+        {/* <ComboBox  
+          type="origin" 
+          name="origin" 
+          value="value" 
+          cuisineOrigin={cuisineOriginArray}
+          onClick={handleAddingFoodOriginClick}/> */}
         <Form.Group className="mb-3">
           <Form.Label>Ingredients:</Form.Label>
           <Form.Control type="ingredients" name="ingredients" placeholder="What does the recipe call for?" />
@@ -34,30 +63,17 @@ export default function ReusableForm(props) {
           <Form.Label>Instructions:</Form.Label>
           <Form.Control as="textarea" rows={3} type="instructions" name="instructions" placeholder="What steps are required?" />
         </Form.Group>
-        {/* <Form.Group className='mb-3'>
-          <Form.Label>Meal Type:</Form.Label>
-          <Form.Control type="mealType" name="mealType" placeholder="Breakfast, Lunch, Dinner..."/>
-        </Form.Group> */}
-        {/* <Form.Group className='mb-3'>
-          <Form.Label>Cultural Origin:</Form.Label>
-          <Form.Control type="origin" name="origin" placeholder="What type of food is it?"/>
-        </Form.Group> */}
-        {/* <Form.Group className='mb-3'>
-          <Form.Label>Rating:</Form.Label>
-          <Form.Control type="rating" name="rating" placeholder="0-5 stars"/>
-        </Form.Group> */}
-      </Form>
       <Rating 
-        name="half-rated" 
-        // getLabelText={getLabelText} 
+        name="rating"
+        type="rating"
         // value={value} 
         defaultValue={2.5} 
         precision={0.5} 
         size="large"/><br/><br/>
         <Button variant="outline-success" type="submit">{props.buttonText}</Button>
+        </Form>
       </div><br/><hr/>
-    </React.Fragment>
-    // </>
+    </>
   );
 }
 

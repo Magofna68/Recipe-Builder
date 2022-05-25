@@ -30,6 +30,15 @@ export class Home extends Component {
       }));
     }
   }
+// sent as prop to NRF to collect data and add recipe into state array
+  handleAddingNewRecipeToList = (newRecipe) => {
+    const newMainRecipeList = this.state.mainRecipeList.concat(newRecipe);
+    console.log(newMainRecipeList);
+    this.setState({
+      mainRecipeList: newMainRecipeList,
+      formVisibleOnPage: false,
+    });
+  }
 
   render () {
     let currentlyVisibleState = null;
@@ -45,7 +54,8 @@ export class Home extends Component {
       buttonText= "Return to Recipe List"
     } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = 
-      <NewRecipeForm />
+      <NewRecipeForm 
+        onNewRecipeCreation={this.handleAddingNewRecipeToList}/>
       buttonText="Return to Recipe List"
     } else {
       currentlyVisibleState = 
