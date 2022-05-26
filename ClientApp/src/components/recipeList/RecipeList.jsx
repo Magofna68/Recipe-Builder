@@ -4,16 +4,16 @@ import PropTypes from 'prop-types';
 
 
 export default function RecipeList(props) {
-
+  const { recipeList, onRecipeSelection } = props;
   
   return (
     <>
       <h1>Recipe List</h1>
       <hr/>
-      {props.recipeList.map((recipe) =>
+      {recipeList.map((recipe) =>
         <Recipe
           //function being passed down through prop drilling from Home -- onRecipeSelection
-          whenRecipeClicked={props.onRecipeSelection}
+          whenRecipeClicked={onRecipeSelection}
           id={recipe.id}
           title={recipe.title}
           instructions={recipe.instructions}

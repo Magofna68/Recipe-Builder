@@ -56,14 +56,41 @@ export class Home extends Component {
     });
   }
 
+  handleEditClick = () => {
+    // const updatedRecipe = this.state.mainRecipeList.filter(recipe => recipe.id === id)
+    console.log("Edit click reached!")
+    this.setState({
+      // mainRecipeList: mainRecipeList.concat(updatedRecipe),
+      editing: true,
+    })
+  }
+
+  handleEditingRecipeInList = (recipeToEdit) => {
+    const editedMainRecipeList = this.state.mainRecipeList
+      .filter(recipe => recipe.id !== this.state.selectedRecipe.id)
+      .concat(recipeToEdit);
+    this.setState({
+      mainRecipeList: editedMainRecipeList,
+      editing: false,
+      selectedRecipe: null,
+    })
+  }
+
   render () {
     let currentlyVisibleState = null;
     let buttonText = null;
 
-    if (this.state.selectedRecipe != null) {
+    if (this.state.editing) {
+    currentlyVisibleState = 
+      <EditRecipeForm 
+      recipe={this.state.selectedRecipe}
+      onEditRecipe={this.handleEditingRecipeInList} />
+    buttonText = "Return to Recipe List"
+    } else if (this.state.selectedRecipe != null) {
       currentlyVisibleState = 
       <RecipeDetail 
         onClickingDelete = {this.handleDeletingRecipe}
+        onClickingEdit={this.handleEditClick}
         recipe={this.state.selectedRecipe} />
       buttonText= "Return to Recipe List"
     } else if (this.state.formVisibleOnPage) {
@@ -71,10 +98,6 @@ export class Home extends Component {
       <NewRecipeForm 
         onNewRecipeCreation={this.handleAddingNewRecipeToList}/>
       buttonText="Return to Recipe List"
-    } else if (this.state.editing) {
-      currentlyVisibleState = 
-        <EditRecipeForm />
-      buttonText = "Return to Recipe List"
     } else {
       currentlyVisibleState = 
       <RecipeList 
