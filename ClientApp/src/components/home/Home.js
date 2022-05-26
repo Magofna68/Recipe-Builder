@@ -10,7 +10,7 @@ export class Home extends Component {
   constructor(props) {
     super(props);
     this.state ={
-      selectedRecipe: {},
+      selectedRecipe: null,
       editing: false,
       mainRecipeList: [],
       formVisibleOnPage: false,
@@ -42,7 +42,7 @@ export class Home extends Component {
 
   // being saved into array rather than object -- find bug:
   handleChangingSelectedRecipe = (id) => {
-    const selectedRecipe = this.state.mainRecipeList.filter(recipe => recipe.id === id[0]);
+    const selectedRecipe = this.state.mainRecipeList.filter(recipe => recipe.id === id)[0];
     console.log(selectedRecipe);
     this.setState({selectedRecipe: selectedRecipe});
   }
@@ -52,11 +52,7 @@ export class Home extends Component {
     let currentlyVisibleState = null;
     let buttonText = null;
 
-    if (this.state.editing) {
-      currentlyVisibleState = 
-        <EditRecipeForm />
-      buttonText = "Return to Recipe List"
-    } else if (this.state.selectedRecipe != null) {
+    if (this.state.selectedRecipe != null) {
       currentlyVisibleState = 
       <RecipeDetail recipe={this.state.selectedRecipe} />
       buttonText= "Return to Recipe List"
@@ -65,6 +61,10 @@ export class Home extends Component {
       <NewRecipeForm 
         onNewRecipeCreation={this.handleAddingNewRecipeToList}/>
       buttonText="Return to Recipe List"
+    } else if (this.state.editing) {
+      currentlyVisibleState = 
+        <EditRecipeForm />
+      buttonText = "Return to Recipe List"
     } else {
       currentlyVisibleState = 
       <RecipeList 

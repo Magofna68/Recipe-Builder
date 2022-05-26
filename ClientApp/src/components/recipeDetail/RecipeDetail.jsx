@@ -10,7 +10,8 @@ export default function RecipeDetail(props) {
     <>
       <Container>
         <h1>Recipe Detail Page</h1>
-        <h2>{recipe.title}</h2>
+        <br/>
+        <h1>{recipe.title}</h1>
         <h3>{recipe.rating} star {recipe.origin} dish<br/> Enjoy it for {recipe.mealType}</h3>
         <ul><li>{recipe.ingredients}</li></ul>
         <p>{recipe.instructions}</p>
