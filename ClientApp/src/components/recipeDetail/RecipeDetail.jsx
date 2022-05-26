@@ -1,9 +1,11 @@
 import React from 'react'
 import { PropTypes } from 'prop-types';
 import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
+
 
 export default function RecipeDetail(props) {
-  const {recipe} = props;
+  const { recipe, onClickingDelete } = props;
   // deconstruct props
 
   return (
@@ -15,6 +17,7 @@ export default function RecipeDetail(props) {
         <h3>{recipe.rating} star {recipe.origin} dish<br/> Enjoy it for {recipe.mealType}</h3>
         <ul><li>{recipe.ingredients}</li></ul>
         <p>{recipe.instructions}</p>
+        <Button variant="outline-danger" onClick={()=> onClickingDelete(recipe.id)}>Delete Recipe</Button>
       </Container>
     </>
   );
@@ -23,4 +26,5 @@ export default function RecipeDetail(props) {
 
 RecipeDetail.propTypes = {
   recipe: PropTypes.object,
+  onClickingDelete: PropTypes.func,
 }

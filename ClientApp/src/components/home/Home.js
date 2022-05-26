@@ -47,6 +47,14 @@ export class Home extends Component {
     this.setState({selectedRecipe: selectedRecipe});
   }
 
+  handleDeletingRecipe = (id) => {
+    const updatedRecipeList = this.state.mainRecipeList.filter(recipe => recipe.id !== id);
+    console.log(updatedRecipeList);
+    this.setState({
+      mainRecipeList: updatedRecipeList,
+      selectedRecipe: null
+    });
+  }
 
   render () {
     let currentlyVisibleState = null;
@@ -54,7 +62,9 @@ export class Home extends Component {
 
     if (this.state.selectedRecipe != null) {
       currentlyVisibleState = 
-      <RecipeDetail recipe={this.state.selectedRecipe} />
+      <RecipeDetail 
+        onClickingDelete = {this.handleDeletingRecipe}
+        recipe={this.state.selectedRecipe} />
       buttonText= "Return to Recipe List"
     } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = 
