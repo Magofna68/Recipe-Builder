@@ -67,8 +67,11 @@ export class Home extends Component {
 
   handleEditingRecipeInList = (recipeToEdit) => {
     const editedMainRecipeList = this.state.mainRecipeList
+      // .filter(recipe => recipe.id !== this.state.selectedRecipe.id)
       .filter(recipe => recipe.id !== this.state.selectedRecipe.id)
       .concat(recipeToEdit);
+    console.log(recipeToEdit)
+    console.log(editedMainRecipeList)
     this.setState({
       mainRecipeList: editedMainRecipeList,
       editing: false,
