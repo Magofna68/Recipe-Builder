@@ -20,6 +20,7 @@ export default function RecipeList(props) {
       origin: "Greek",
       mealType:"Breakfast",
       rating:"4.5",
+      quote: "Gravy, Baby!",
       img: "https://vegcharlotte.files.wordpress.com/2013/10/vegan-sausage-gravy-biscuits-2.jpg",
       key:0
     },
@@ -33,6 +34,7 @@ export default function RecipeList(props) {
       origin: "Comfort",
       mealType:"Snack",
       rating:"3.5",
+      quote: "This was my grandaddy's favorite",
       img: "https://thegirlmusteat.files.wordpress.com/2013/03/img_0856.jpg",
       key:1
     },
@@ -46,6 +48,7 @@ export default function RecipeList(props) {
       origin: "Traditional American",
       mealType: "Dinner",
       rating:"5.0",
+      quote: "Nothing better than man made burgers.",
       img: "https://nyceats.files.wordpress.com/2008/05/island-burger-005.jpg",
       key:2
     },
@@ -59,6 +62,7 @@ export default function RecipeList(props) {
       origin: "French",
       mealType:"Snack",
       rating:"4.5",
+      quote: "We make em, you eat em.",
       img: "https://64.media.tumblr.com/tumblr_m0jxzwVtQn1qaiktvo1_1280.jpg",
       key:3
     },
@@ -71,6 +75,7 @@ export default function RecipeList(props) {
       <hr/>
       <Container fluid styles={{
         display: "flex",
+        width: '90vw'
       }}>
         <Row styles={{
           display: "flex",
@@ -88,6 +93,7 @@ export default function RecipeList(props) {
           mealType={recipe.mealType}
           rating={recipe.rating}
           img={recipe.img}
+          quote={recipe.quote}
           key={recipe.id}
         />
       )}

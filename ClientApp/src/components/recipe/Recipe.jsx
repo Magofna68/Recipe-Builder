@@ -15,7 +15,10 @@ export default function Recipe(props) {
         <Card.Img variant="top" src={props.img}/>
         <Card.Title>{props.ingredients}</Card.Title>
         <Card.Subtitle>{props.origin}</Card.Subtitle>
-        <Card.Text>{props.instructions}</Card.Text>
+        <footer className="blockquote-footer">
+        {props.quote}
+      </footer>
+        {/* <Card.Text>{props.instructions}</Card.Text> */}
         <Card.Footer muted>{props.mealType} -- {props.rating}</Card.Footer>
       </Card>
     </>

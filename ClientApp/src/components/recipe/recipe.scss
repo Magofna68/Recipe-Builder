@@ -1,6 +1,6 @@
 .text-center{
   color: black;
-  background-color: rgb(216, 216, 216);
+  // background-color: rgb(216, 216, 216);
   // width: 40%;
   // display: flex;
   // align-items: center;
@@ -22,14 +22,35 @@
   }
 }
 
+.card-header{
+  background-color: white;
+  margin-bottom: 10px;
+  border-radius: 15px;
+}
+
+img.card-img-top{
+  height: 50%;
+  border-radius: 10px;
+  background-color: white;
+}
+
 #ticketStatus{
   font-size: small;
 }
 p.card-text {
-  padding: 0px 0 0px 0;
-  margin: 0 0 0 0;
+  padding: 10px 0 0px 10px;
+  margin: 5px 5px 5px 5px;
+  background-color: rgb(233, 231, 231);
 }
 
 .card-footer{
   width: 100%;
+  height: 10%;
+  position: absolute;
+  bottom: 0%;
+  justify-content:space-around;
+}
+
+.card{
+  height: 25rem;
 }
