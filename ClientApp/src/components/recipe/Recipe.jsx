@@ -9,8 +9,10 @@ export default function Recipe(props) {
       <Card 
         style={{ width: '18rem' }} 
         className="text-center" 
-        onClick={() => props.whenRecipeClicked(props.id)}>
+        onClick={() => props.whenRecipeClicked(props.id)}
+        >
         <Card.Header>{props.title}</Card.Header>
+        <Card.Img variant="top" src={props.img}/>
         <Card.Title>{props.ingredients}</Card.Title>
         <Card.Subtitle>{props.origin}</Card.Subtitle>
         <Card.Text>{props.instructions}</Card.Text>

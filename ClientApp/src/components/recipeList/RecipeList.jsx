@@ -20,6 +20,7 @@ export default function RecipeList(props) {
       origin: "Greek",
       mealType:"Breakfast",
       rating:"4.5",
+      img: "https://vegcharlotte.files.wordpress.com/2013/10/vegan-sausage-gravy-biscuits-2.jpg",
       key:0
     },
     {
@@ -32,6 +33,7 @@ export default function RecipeList(props) {
       origin: "Comfort",
       mealType:"Snack",
       rating:"3.5",
+      img: "https://thegirlmusteat.files.wordpress.com/2013/03/img_0856.jpg",
       key:1
     },
     {
@@ -44,6 +46,7 @@ export default function RecipeList(props) {
       origin: "Traditional American",
       mealType: "Dinner",
       rating:"5.0",
+      img: "https://nyceats.files.wordpress.com/2008/05/island-burger-005.jpg",
       key:2
     },
     {
@@ -56,6 +59,7 @@ export default function RecipeList(props) {
       origin: "French",
       mealType:"Snack",
       rating:"4.5",
+      img: "https://64.media.tumblr.com/tumblr_m0jxzwVtQn1qaiktvo1_1280.jpg",
       key:3
     },
 
@@ -65,10 +69,12 @@ export default function RecipeList(props) {
     <>
       <h1>Recipe List</h1>
       <hr/>
-      <Container styles={{
+      <Container fluid styles={{
         display: "flex",
       }}>
-        <Row>
+        <Row styles={{
+          display: "flex",
+        }}>
       {/* {recipeList.map((recipe) => */}
       {dummyData.map((recipe) => 
         <Recipe
@@ -81,6 +87,7 @@ export default function RecipeList(props) {
           origin={recipe.origin}
           mealType={recipe.mealType}
           rating={recipe.rating}
+          img={recipe.img}
           key={recipe.id}
         />
       )}
