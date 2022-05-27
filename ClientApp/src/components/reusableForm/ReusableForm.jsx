@@ -30,7 +30,7 @@ export default function ReusableForm(props) {
   ];
 
   const handleAddingFoodOriginClick = (newValues) => {
-    const updatedValues = {...value}.concat(newValues);
+    const updatedValues = [...value].concat(newValues);
     setValue(updatedValues);
     console.log(value)
   }

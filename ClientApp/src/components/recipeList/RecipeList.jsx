@@ -1,6 +1,9 @@
 import React from 'react';
 import Recipe from '../recipe/Recipe';
 import PropTypes from 'prop-types';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+
 
 
 export default function RecipeList(props) {
@@ -10,6 +13,10 @@ export default function RecipeList(props) {
     <>
       <h1>Recipe List</h1>
       <hr/>
+      <Container styles={{
+        display: "flex",
+      }}>
+        <Row>
       {recipeList.map((recipe) =>
         <Recipe
           //function being passed down through prop drilling from Home -- onRecipeSelection
@@ -24,6 +31,8 @@ export default function RecipeList(props) {
           key={recipe.id}
         />
       )}
+      </Row>
+      </Container>
     </>
   );
 }

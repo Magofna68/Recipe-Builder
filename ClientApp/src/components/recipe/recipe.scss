@@ -1,0 +1,35 @@
+.text-center{
+  color: black;
+  background-color: rgb(216, 216, 216);
+  // width: 40%;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // height: 20vw;
+  padding: 1%;
+  margin: 1%;
+  transition: ease-in-out all 1s;
+  border-radius: 10px;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.02);
+    opacity: 0.8;
+    background: 
+      linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+      linear-gradient(127deg, rgba(0, 17, 255, 0.8), rgba(0,255,0,0) 70.71%),
+      linear-gradient(336deg, rgba(0, 255, 106, 0.8), rgba(0,0,255,0) 70.71%); 
+  }
+}
+
+#ticketStatus{
+  font-size: small;
+}
+p.card-text {
+  padding: 0px 0 0px 0;
+  margin: 0 0 0 0;
+}
+
+.card-footer{
+  width: 100%;
+}
