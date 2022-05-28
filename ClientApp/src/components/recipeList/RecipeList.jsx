@@ -75,8 +75,10 @@ export default function RecipeList(props) {
       <hr/>
       <Container fluid styles={{
         display: "flex",
-        width: '90vw'
+        width: '90vw',
+        background: 'white',
       }}>
+        {/* <div styles="background-image: url(https://thumbs.dreamstime.com/b/cooking-kitchen-food-background-concept-spices-vegetables-ingredients-free-copy-space-abstract-127774421.jpg)"> */}
         <Row styles={{
           display: "flex",
         }}>

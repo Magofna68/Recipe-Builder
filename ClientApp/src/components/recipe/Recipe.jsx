@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 import './recipe.scss';
+import StarIcon from '@mui/icons-material/Star';
 
 export default function Recipe(props) {
   return (
@@ -10,16 +11,20 @@ export default function Recipe(props) {
         style={{ width: '18rem' }} 
         className="text-center" 
         onClick={() => props.whenRecipeClicked(props.id)}
-        >
-        <Card.Header>{props.title}</Card.Header>
+      >
+        <Card.Header>{props.origin} {props.mealType}</Card.Header>
         <Card.Img variant="top" src={props.img}/>
-        <Card.Title>{props.ingredients}</Card.Title>
-        <Card.Subtitle>{props.origin}</Card.Subtitle>
+        <Card.Title>{props.title}</Card.Title>
+        {/* <Card.Title>{props.ingredients}</Card.Title> */}
+        {/* <Card.Subtitle>{props.origin}</Card.Subtitle> */}
         <footer className="blockquote-footer">
         {props.quote}
-      </footer>
+        </footer>
         {/* <Card.Text>{props.instructions}</Card.Text> */}
-        <Card.Footer muted>{props.mealType} -- {props.rating}</Card.Footer>
+        <Card.Footer muted>
+          {props.rating}
+          <StarIcon />
+          </Card.Footer>
       </Card>
     </>
   );

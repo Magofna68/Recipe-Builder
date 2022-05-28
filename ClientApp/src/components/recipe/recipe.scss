@@ -11,27 +11,38 @@
   transition: ease-in-out all 1s;
   border-radius: 10px;
   cursor: pointer;
+  transition: 1s all ease;
 
   &:hover {
     transform: scale(1.02);
-    opacity: 0.8;
+    // opacity: 0.8;
     background: 
       linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
       linear-gradient(127deg, rgba(0, 17, 255, 0.8), rgba(0,255,0,0) 70.71%),
       linear-gradient(336deg, rgba(0, 255, 106, 0.8), rgba(0,0,255,0) 70.71%); 
+
+      .card-title.h5{
+        text-decoration: underline;
+      }
+      .card-header{
+        color: white;
+        opacity: .6;
+      }
   }
 }
 
 .card-header{
-  background-color: white;
+  // background-color: white;
   margin-bottom: 10px;
   border-radius: 15px;
+  font-weight: 600;
 }
 
 img.card-img-top{
   height: 50%;
   border-radius: 10px;
   background-color: white;
+  margin-bottom: 10px;
 }
 
 #ticketStatus{
@@ -43,12 +54,27 @@ p.card-text {
   background-color: rgb(233, 231, 231);
 }
 
+.card-title.h5{
+
+  &:hover{
+    text-decoration: underline;
+  }
+}
+
 .card-footer{
+  margin: 0;
+  padding: 0;
   width: 100%;
   height: 10%;
   position: absolute;
   bottom: 0%;
   justify-content:space-around;
+  overflow: hidden;
+}
+
+.blockquote-footer{
+  margin: 0;
+
 }
 
 .card{
