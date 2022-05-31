@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace reactProj.Controllers;
 
-[Authorize]
+
 [ApiController]
 [Route("[controller]")]
 public class WeatherForecastController : ControllerBase

@@ -11,7 +11,7 @@
     "reactProj": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:7219;http://localhost:5120",
+      "applicationUrl": "https://localhost:7219;http://localhost:5120", //7219 is the api server path
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.AspNetCore.SpaProxy"
