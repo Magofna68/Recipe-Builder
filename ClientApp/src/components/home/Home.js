@@ -34,7 +34,7 @@ export class Home extends Component {
           title: "Mama's Homemade Hummus",
           instructions:
           "1. Pick out your favorite hummus.",
-          ingredients:"Hummus",
+          ingredients:["Hummus", "Beer Battered Chips", "Puss"],
           origin: "Comfort",
           mealType:"Snack",
           rating:"3.5",
@@ -48,7 +48,7 @@ export class Home extends Component {
           title: "Mama's Homemade Hamburgers",
           instructions:
           "1. Pick out your favorite burger 2. Put Mama's sauce on it.",
-          ingredients:"Burger & Mama Sauce",
+          ingredients:["Burger", "Mama Sauce", "Lettuce"],
           origin: "Traditional American",
           mealType: "Dinner",
           rating:"5.0",
@@ -62,7 +62,7 @@ export class Home extends Component {
           title: "Mama's Homemade Fries",
           instructions:
           "1. Pick your Size 2. Get your Fries.",
-          ingredients:"Potatoe & Butter",
+          ingredients: ["Potato", "Butter", "Salt"],
           origin: "French",
           mealType:"Snack",
           rating:"4.5",

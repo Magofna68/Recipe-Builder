@@ -10,8 +10,6 @@ import StarIcon from '@mui/icons-material/Star';
 export default function RecipeDetail(props) {
   const { recipe, onClickingDelete, onClickingEdit } = props;
   // deconstruct props
-
-  // const separatedIngredients = {recipe.ingredients}.split(,)
   return (
     <>
       <Container fluid>
@@ -23,16 +21,16 @@ export default function RecipeDetail(props) {
               <h4>{recipe.rating} <StarIcon />{recipe.origin} dish - Enjoy it for {recipe.mealType} </h4>
             </div>
             <br/><br/>
-            <h3>Ingredients:</h3>
-            <ul>{recipe.ingredients.map((ingredient, i) => {
+            <h4>Here's what you'll need:</h4>
+            {/* <ul>{separatedIngredients.map((ingredient) => { */}
+            <ul>{recipe.ingredients.map((ingredient) => {
               return (
-                
                   <li>
-                    {recipe.ingredients}
+                    {ingredient}
                   </li>
-                
               )
-            })}</ul>
+            })}
+            </ul>
             <h3>Instructions: </h3><p>{recipe.instructions}</p>
             <Button variant="outline-success" onClick={() => onClickingEdit()}>Update Recipe</Button>
             <Button variant="outline-danger" onClick={()=> onClickingDelete(recipe.id)}>Delete Recipe</Button>
