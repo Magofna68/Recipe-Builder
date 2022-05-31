@@ -2,23 +2,45 @@ import React from 'react'
 import { PropTypes } from 'prop-types';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import StarIcon from '@mui/icons-material/Star';
 
 
 export default function RecipeDetail(props) {
   const { recipe, onClickingDelete, onClickingEdit } = props;
   // deconstruct props
 
+  // const separatedIngredients = {recipe.ingredients}.split(,)
   return (
     <>
-      <Container>
-        <h1>Recipe Detail Page</h1>
-        <br/>
-        <h1>{recipe.title}</h1>
-        <h3>{recipe.rating} star {recipe.origin} dish<br/> Enjoy it for {recipe.mealType}</h3>
-        <ul><li>{recipe.ingredients}</li></ul>
-        <p>{recipe.instructions}</p>
-        <Button variant="outline-success" onClick={() => onClickingEdit()}>Update Recipe</Button>
-        <Button variant="outline-danger" onClick={()=> onClickingDelete(recipe.id)}>Delete Recipe</Button>
+      <Container fluid>
+        <Row>
+          <Col>
+            {/* <h1>Recipe Detail Page</h1> */}
+            <h1>{recipe.title}</h1><hr/>
+            <div>
+              <h4>{recipe.rating} <StarIcon />{recipe.origin} dish - Enjoy it for {recipe.mealType} </h4>
+            </div>
+            <br/><br/>
+            <h3>Ingredients:</h3>
+            <ul>{recipe.ingredients.map((ingredient, i) => {
+              return (
+                
+                  <li>
+                    {recipe.ingredients}
+                  </li>
+                
+              )
+            })}</ul>
+            <h3>Instructions: </h3><p>{recipe.instructions}</p>
+            <Button variant="outline-success" onClick={() => onClickingEdit()}>Update Recipe</Button>
+            <Button variant="outline-danger" onClick={()=> onClickingDelete(recipe.id)}>Delete Recipe</Button>
+          </Col>
+          {/* <Col>
+            <Image src={recipe.img} />
+          </Col> */}
+        </Row>
       </Container>
     </>
   );
