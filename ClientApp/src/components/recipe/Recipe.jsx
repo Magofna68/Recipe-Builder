@@ -8,7 +8,11 @@ export default function Recipe(props) {
   return (
     <>
       <Card 
-        style={{ width: '18rem' }} 
+        style={{ 
+          width: '17rem',
+          margin: 'auto',
+          marginBottom: '10px',
+        }} 
         className="text-center" 
         onClick={() => props.whenRecipeClicked(props.id)}
       >

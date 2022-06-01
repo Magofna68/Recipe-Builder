@@ -18,8 +18,9 @@ export class Home extends Component {
           // whenRecipeClicked: {onRecipeSelection},
           id: 0,
           title: "Mama's Homemade French Gravy",
-          instructions:
-          "1. Pick out your favorite sauce and mix as you go. 2. Place in bowl and microwave.",
+          instructions: [
+          "Pick out your favorite sauce and mix as you go.", "Place in bowl and microwave."
+          ],
           ingredients:["Milk", "Cream", "Butter"],
           origin: "Greek",
           mealType:"Breakfast",
@@ -32,8 +33,9 @@ export class Home extends Component {
           // whenRecipeClicked: {onRecipeSelection},
           id: 1,
           title: "Mama's Homemade Hummus",
-          instructions:
-          "1. Pick out your favorite hummus.",
+          instructions: [
+          "Pick out your favorite hummus.", "Eat", "Enjoy!"
+          ],
           ingredients:["Hummus", "Beer Battered Chips", "Puss"],
           origin: "Comfort",
           mealType:"Snack",
@@ -46,8 +48,9 @@ export class Home extends Component {
           // whenRecipeClicked: {onRecipeSelection},
           id: 2,
           title: "Mama's Homemade Hamburgers",
-          instructions:
-          "1. Pick out your favorite burger 2. Put Mama's sauce on it.",
+          instructions: [
+          "Pick out your favorite burger", "Put Mama's sauce on it.", "Gobble it down cowboy."
+          ],
           ingredients:["Burger", "Mama Sauce", "Lettuce"],
           origin: "Traditional American",
           mealType: "Dinner",
@@ -60,8 +63,9 @@ export class Home extends Component {
           // whenRecipeClicked: {onRecipeSelection},
           id: 3,
           title: "Mama's Homemade Fries",
-          instructions:
-          "1. Pick your Size 2. Get your Fries.",
+          instructions: [
+          "Pick your Size", "Get your Fries.",
+          ],
           ingredients: ["Potato", "Butter", "Salt"],
           origin: "French",
           mealType:"Snack",

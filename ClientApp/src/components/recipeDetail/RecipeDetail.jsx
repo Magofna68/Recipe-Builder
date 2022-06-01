@@ -5,6 +5,8 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import StarIcon from '@mui/icons-material/Star';
+import './recipeDetail.scss';
+import DeleteSharpIcon from '@mui/icons-material/DeleteSharp';
 
 
 export default function RecipeDetail(props) {
@@ -13,33 +15,54 @@ export default function RecipeDetail(props) {
   return (
     <>
       <Container fluid>
-        <Row>
+        <Row lg={true}>
           <Col>
             {/* <h1>Recipe Detail Page</h1> */}
             <h1>{recipe.title}</h1><hr/>
             <div>
               <h4>{recipe.rating} <StarIcon />{recipe.origin} dish - Enjoy it for {recipe.mealType} </h4>
             </div>
-            <br/><br/>
-            <h4>Here's what you'll need:</h4>
-            {/* <ul>{separatedIngredients.map((ingredient) => { */}
-            <ul>{recipe.ingredients.map((ingredient) => {
+            <br/>
+            <div className="ingredientContainer">
+              <h4>Here's what you'll need:</h4>
+              {/* <ul>{separatedIngredients.map((ingredient) => { */}
+              <ul>{recipe.ingredients.map((ingredient) => {
+                return (
+                    <li>
+                      {ingredient}
+                    </li>
+                )
+              })}
+              </ul>
+            </div>
+            <h4>Instructions: </h4>
+            <ol>
+            {recipe.instructions.map((instructions) => {
               return (
-                  <li>
-                    {ingredient}
-                  </li>
+                <li>
+                  {instructions}<br/>
+                </li>
               )
             })}
-            </ul>
-            <h3>Instructions: </h3><p>{recipe.instructions}</p>
-            <Button variant="outline-success" onClick={() => onClickingEdit()}>Update Recipe</Button>
-            <Button variant="outline-danger" onClick={()=> onClickingDelete(recipe.id)}>Delete Recipe</Button>
+            </ol>
+            <Button 
+              id="updateButton"
+              variant="outline-success" 
+              onClick={() => onClickingEdit()}>Update Recipe</Button>
+            {/* <Button 
+              variant="outline-danger" 
+              onClick={()=> onClickingDelete(recipe.id)}>Delete Recipe</Button> */}
+            <DeleteSharpIcon fontSize="large" onClick={()=> onClickingDelete(recipe.id)} />
           </Col>
           {/* <Col>
-            <Image src={recipe.img} />
+            <image src={props.img} />
+            <picture>
+              <source srcSet={props.img}/>
+            </picture>
           </Col> */}
         </Row>
       </Container>
+      <hr/>
     </>
   );
 }
