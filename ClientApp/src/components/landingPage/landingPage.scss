@@ -1,0 +1,31 @@
+#landingPage{
+  background-image: url("https://images.pexels.com/photos/1095550/pexels-photo-1095550.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter:brightness(120%);
+  filter: saturate(120%);
+  color: gray;
+  margin: 0 0% 0 0;
+  background-position-x: center;
+}
+
+header {
+  display: none;
+}
+
+.titleContainer{
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+
+css-tzssek-MuiSvgIcon-root {
+  color: red;
+  position: absolute;
+  top: 0;
+  right: 0;
+}

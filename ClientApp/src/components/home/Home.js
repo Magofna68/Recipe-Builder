@@ -5,6 +5,7 @@ import EditRecipeForm from '../editRecipe/EditRecipeForm';
 import NewRecipeForm from '../newRecipeForm/NewRecipeForm';
 import RecipeDetail from '../recipeDetail/RecipeDetail';
 import Button from '@mui/material/Button';
+import LandingPage from '../landingPage/LandingPage';
 
 export class Home extends Component {
   constructor(props) {
@@ -12,6 +13,8 @@ export class Home extends Component {
     this.state ={
       selectedRecipe: null,
       editing: false,
+      formVisibleOnPage: false,
+      landingPage: true,
       // mainRecipeList: [],
       mainRecipeList: [
         {
@@ -75,7 +78,6 @@ export class Home extends Component {
           key:3
         },
       ],
-      formVisibleOnPage: false,
     };
   }
 
@@ -141,11 +143,20 @@ export class Home extends Component {
     })
   }
 
+  handleLandingPageClick = () => {
+    this.setState({
+      landingPage: false,
+    });
+  }
+
   render () {
     let currentlyVisibleState = null;
     let buttonText = null;
 
-    if (this.state.editing) {
+    if (this.state.landingPage) {
+      currentlyVisibleState = <LandingPage onLandingPageClick={this.handleLandingPageClick}/>
+    buttonText="Go To Site"
+    } else if (this.state.editing) {
     currentlyVisibleState = 
       <EditRecipeForm 
       recipe={this.state.selectedRecipe}
