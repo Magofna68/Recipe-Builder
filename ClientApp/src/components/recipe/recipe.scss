@@ -41,8 +41,10 @@
 img.card-img-top{
   height: 50%;
   border-radius: 10px;
-  background-color: white;
+  background-color: rgb(241, 248, 165);
   margin-bottom: 10px;
+  filter: brightness(150%);
+  filter:saturate(150%)
 }
 
 #ticketStatus{

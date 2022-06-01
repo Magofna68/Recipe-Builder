@@ -5,6 +5,7 @@ import EditRecipeForm from '../editRecipe/EditRecipeForm';
 import NewRecipeForm from '../newRecipeForm/NewRecipeForm';
 import RecipeDetail from '../recipeDetail/RecipeDetail';
 import Button from '@mui/material/Button';
+import LandingPage from '../landingPage/LandingPage';
 
 export class Home extends Component {
   constructor(props) {
@@ -12,14 +13,17 @@ export class Home extends Component {
     this.state ={
       selectedRecipe: null,
       editing: false,
+      formVisibleOnPage: false,
+      landingPage: true,
       // mainRecipeList: [],
       mainRecipeList: [
         {
           // whenRecipeClicked: {onRecipeSelection},
           id: 0,
           title: "Mama's Homemade French Gravy",
-          instructions:
-          "1. Pick out your favorite sauce and mix as you go. 2. Place in bowl and microwave.",
+          instructions: [
+          "Pick out your favorite sauce and mix as you go.", "Place in bowl and microwave."
+          ],
           ingredients:["Milk", "Cream", "Butter"],
           origin: "Greek",
           mealType:"Breakfast",
@@ -32,9 +36,10 @@ export class Home extends Component {
           // whenRecipeClicked: {onRecipeSelection},
           id: 1,
           title: "Mama's Homemade Hummus",
-          instructions:
-          "1. Pick out your favorite hummus.",
-          ingredients:"Hummus",
+          instructions: [
+          "Pick out your favorite hummus.", "Eat", "Enjoy!"
+          ],
+          ingredients:["Hummus", "Beer Battered Chips", "Puss"],
           origin: "Comfort",
           mealType:"Snack",
           rating:"3.5",
@@ -46,9 +51,10 @@ export class Home extends Component {
           // whenRecipeClicked: {onRecipeSelection},
           id: 2,
           title: "Mama's Homemade Hamburgers",
-          instructions:
-          "1. Pick out your favorite burger 2. Put Mama's sauce on it.",
-          ingredients:"Burger & Mama Sauce",
+          instructions: [
+          "Pick out your favorite burger", "Put Mama's sauce on it.", "Gobble it down cowboy."
+          ],
+          ingredients:["Burger", "Mama Sauce", "Lettuce"],
           origin: "Traditional American",
           mealType: "Dinner",
           rating:"5.0",
@@ -60,9 +66,10 @@ export class Home extends Component {
           // whenRecipeClicked: {onRecipeSelection},
           id: 3,
           title: "Mama's Homemade Fries",
-          instructions:
-          "1. Pick your Size 2. Get your Fries.",
-          ingredients:"Potatoe & Butter",
+          instructions: [
+          "Pick your Size", "Get your Fries.",
+          ],
+          ingredients: ["Potato", "Butter", "Salt"],
           origin: "French",
           mealType:"Snack",
           rating:"4.5",
@@ -71,7 +78,6 @@ export class Home extends Component {
           key:3
         },
       ],
-      formVisibleOnPage: false,
     };
   }
 
@@ -137,11 +143,20 @@ export class Home extends Component {
     })
   }
 
+  handleLandingPageClick = () => {
+    this.setState({
+      landingPage: false,
+    });
+  }
+
   render () {
     let currentlyVisibleState = null;
     let buttonText = null;
 
-    if (this.state.editing) {
+    if (this.state.landingPage) {
+      currentlyVisibleState = <LandingPage onLandingPageClick={this.handleLandingPageClick}/>
+    buttonText="Go To Site"
+    } else if (this.state.editing) {
     currentlyVisibleState = 
       <EditRecipeForm 
       recipe={this.state.selectedRecipe}

@@ -1,0 +1,26 @@
+#updateButton {
+  margin: 0 10px 0 0;
+}
+
+.col{
+  margin-bottom: 15px;
+}
+
+.ingredientContainer {
+  text-decoration-color: white;
+  background-color: gray;
+  color: white;
+  font-weight: 500;
+  border-radius: 10px;
+  padding: 10px 10px;
+  margin: 0 0 10px 0;
+}
+
+.css-tzssek-MuiSvgIcon-root {
+  transition: 4s ease-in-out;
+
+  :hover{
+    cursor: pointer;
+    color: rgb(255, 71, 71);
+  }
+}
