@@ -8,12 +8,14 @@ import Container from 'react-bootstrap/Container';
 export default function LandingPage(props) {
   return (
     <Container id='landingPage'>
+      <div id="lpIcon">
         <CloseIcon fontSize="large" onClick={props.onLandingPageClick} />
-      <div className='titleContainer'>
-        <h1>Beat the Meat</h1>
-        <h2>Eat Vegan.</h2>
-        <h4>Check out these Vegan Recipe's</h4>
       </div>
+      <div className='titleContainer'>
+        <h1>Beat the Meat.</h1>
+      </div>
+        <h2>Eat Vegan.</h2>
+        <h4>Check out these Recipe's</h4>
     </Container>
     
   )
