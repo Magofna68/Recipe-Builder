@@ -29,6 +29,7 @@ export class Home extends Component {
           mealType:"Breakfast",
           rating:"4.5",
           quote: "Gravy, Baby!",
+          timeOpen: '9/11/2022',
           img: "https://vegcharlotte.files.wordpress.com/2013/10/vegan-sausage-gravy-biscuits-2.jpg",
           key:0
         },
@@ -43,6 +44,7 @@ export class Home extends Component {
           origin: "Comfort",
           mealType:"Snack",
           rating:"3.5",
+          timeOpen: '4/12/2022',
           quote: "This was my grandaddy's favorite",
           img: "https://thegirlmusteat.files.wordpress.com/2013/03/img_0856.jpg",
           key:1
@@ -58,6 +60,7 @@ export class Home extends Component {
           origin: "Traditional American",
           mealType: "Dinner",
           rating:"5.0",
+          timeOpen: '6/18/2021',
           quote: "Nothing better than man made burgers.",
           img: "https://nyceats.files.wordpress.com/2008/05/island-burger-005.jpg",
           key:2
@@ -73,12 +76,32 @@ export class Home extends Component {
           origin: "French",
           mealType:"Snack",
           rating:"4.5",
+          timeOpen: '11/02/2020',
           quote: "We make em, you eat em.",
           img: "https://64.media.tumblr.com/tumblr_m0jxzwVtQn1qaiktvo1_1280.jpg",
           key:3
         },
       ],
     };
+  }
+
+  componentDidMount() {
+    this.waitTimeUpdateTimer = setInterval (() =>
+    this.updateRecipeElapsedWaitTime(), 6000
+    );
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.waitTimeUpdateTimer);
+  }
+
+  updateRecipeElapsedWaitTime = () => {
+    Object.values(this.props.mainRecipeList).forEach(recipe => {
+      const newFormattedWaitTime = recipe.timeOpen.fromNow(true);
+      this.setState({
+
+      })
+    })
   }
 
   handleClick = () => {
@@ -155,7 +178,7 @@ export class Home extends Component {
 
     if (this.state.landingPage) {
       currentlyVisibleState = <LandingPage onLandingPageClick={this.handleLandingPageClick}/>
-    buttonText="Go To Site"
+    buttonText="2022 Copyright"
     } else if (this.state.editing) {
     currentlyVisibleState = 
       <EditRecipeForm 

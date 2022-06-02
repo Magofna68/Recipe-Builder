@@ -14,8 +14,10 @@ export default function LandingPage(props) {
       <div className='titleContainer'>
         <h1>Beat the Meat.</h1>
       </div>
-        <h2>Eat Vegan.</h2>
-        <h4>Check out these Recipe's</h4>
+      <div className="bottomText">
+        <h2>Vegan Eats.</h2>
+        <h4>Impacting the World, one recipe at a Time.</h4>
+      </div>
     </Container>
     
   )

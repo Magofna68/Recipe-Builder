@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 import './recipe.scss';
 import StarIcon from '@mui/icons-material/Star';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 
 export default function Recipe(props) {
   return (
@@ -26,8 +29,16 @@ export default function Recipe(props) {
         </footer>
         {/* <Card.Text>{props.instructions}</Card.Text> */}
         <Card.Footer muted>
-          {props.rating}
-          <StarIcon />
+          {/* <Row> */}<div className="footerText">
+          <span>
+            <span id="blackText">{props.rating}</span>
+            <StarIcon />
+            </span>
+            <span id="whiteText">
+            {props.timeOpen} 
+            </span>
+            </div>
+            {/* </Row> */}
           </Card.Footer>
       </Card>
     </>
@@ -45,4 +56,5 @@ Recipe.propTypes = {
   mealType: PropTypes.string,
   rating: PropTypes.string,
   whenRecipeClicked: PropTypes.func,
+  formattedWaitTime: PropTypes.string,
 }
