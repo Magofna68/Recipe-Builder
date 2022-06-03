@@ -1,0 +1,21 @@
+App Structure 
+-------------
+
+--src
+---+ actions
+    |-- api.js (handle http requests)
+    |-- recipe.js (redux actions and action creators)
+    |-- store.js (redux store)
+
+---+ components 
+    |-- recipeForm.js (form operations) - child
+    |-- recipes.js (list of recipes) - parent
+    |-- useForm.js (common form ops)
+
+---+ reducers
+    |-- recipe.js (form operations)
+    |-- index.js (form operations)
+
+--app.js
+--index.js
+--index.css
