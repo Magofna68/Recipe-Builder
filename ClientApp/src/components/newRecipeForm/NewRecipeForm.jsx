@@ -24,7 +24,7 @@ import Moment from 'moment';
       // moment.js -- need to find way to set state to reflect when recipe was posted
       // timeOpen: new Moment().fromNow(true),
       timeOpen: new Moment().format("D/M/YY"),
-      formattedWaitTime: new Moment().format("MMM Do, YYYY"),
+      // formattedWaitTime: new Moment().format("MMM Do, YYYY"),
       // Need to rework how values are being est and being stored -- stretch
       // origin: e.target.origin.value,
       // mealType: e.target.mealType.value,

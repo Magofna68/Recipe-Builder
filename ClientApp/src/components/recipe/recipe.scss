@@ -76,10 +76,11 @@ p.card-text {
 }
 
 .footerText{
-  width: 90%;
+  width: 95%;
   height: auto;
   justify-content: space-between;
   display: flex;
+  margin: 0 5px;
 }
 
 #blackText{
@@ -94,11 +95,13 @@ p.card-text {
   height: 10%;
   position: absolute;
   bottom: 0%;
-  justify-content:space-between;
+  left: 0%;
+  // justify-content:space-between;
   overflow: hidden;
   display: inline-block;
   overflow-x: hidden;
   font-size: medium;
+  align-items: center;
 }
 
 .blockquote-footer{

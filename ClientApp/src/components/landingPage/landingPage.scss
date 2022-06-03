@@ -9,6 +9,10 @@
   color: gray;
   margin: 0 0% 0 0;
   background-position-x: center;
+  scroll-behavior: none;
+  overflow-y: hidden;
+  position: fixed;
+  overflow-x: visible;
 
   h2{
     margin-top: 75vh;
