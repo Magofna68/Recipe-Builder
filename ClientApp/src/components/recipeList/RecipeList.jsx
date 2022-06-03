@@ -41,6 +41,7 @@ export default function RecipeList(props) {
           img={recipe.img}
           quote={recipe.quote}
           key={recipe.id}
+          timeOpen={recipe.timeOpen}
         />
       )}
       </Row>

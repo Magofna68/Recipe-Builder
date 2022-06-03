@@ -24,11 +24,17 @@ export default function Recipe(props) {
         <footer className="blockquote-footer">
         {props.quote}
         </footer>
-        {/* <Card.Text>{props.instructions}</Card.Text> */}
         <Card.Footer muted>
-          {props.rating}
-          <StarIcon />
-          </Card.Footer>
+          <div className="footerText">
+            <span>
+              <span id="blackText">{props.rating}</span>
+              <StarIcon />
+            </span>
+            <span id="whiteText">
+              {props.timeOpen} 
+            </span>
+          </div>
+        </Card.Footer>
       </Card>
     </>
   );
@@ -45,4 +51,5 @@ Recipe.propTypes = {
   mealType: PropTypes.string,
   rating: PropTypes.string,
   whenRecipeClicked: PropTypes.func,
+  formattedWaitTime: PropTypes.string,
 }

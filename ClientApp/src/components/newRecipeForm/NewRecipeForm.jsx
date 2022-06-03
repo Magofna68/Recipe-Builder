@@ -2,6 +2,7 @@ import React from 'react'
 import ReusableForm from '../reusableForm/ReusableForm'
 import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
+import Moment from 'moment';
 
 // not class based component, so function, not method. Methods = called on instances of a class
 // export default
@@ -20,11 +21,14 @@ import { v4 } from 'uuid';
       instructions: e.target.instructions.value,
       ingredients: e.target.ingredients.value,
       rating: e.target.rating.value,
+      // moment.js -- need to find way to set state to reflect when recipe was posted
+      // timeOpen: new Moment().fromNow(true),
+      timeOpen: new Moment().format("D/M/YY"),
+      // formattedWaitTime: new Moment().format("MMM Do, YYYY"),
       // Need to rework how values are being est and being stored -- stretch
       // origin: e.target.origin.value,
       // mealType: e.target.mealType.value,
-    })
-    // console.log(e.target.mealType.value);
+    });
     // console.log(e.target.rating.value);
   }
 

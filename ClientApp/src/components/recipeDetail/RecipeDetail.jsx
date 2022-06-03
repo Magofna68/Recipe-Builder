@@ -54,12 +54,9 @@ export default function RecipeDetail(props) {
               onClick={()=> onClickingDelete(recipe.id)}>Delete Recipe</Button> */}
             <DeleteSharpIcon fontSize="large" onClick={()=> onClickingDelete(recipe.id)} />
           </Col>
-          {/* <Col>
-            <image src={props.img} />
-            <picture>
-              <source srcSet={props.img}/>
-            </picture>
-          </Col> */}
+          <Col>
+              <img src={recipe.img} alt="test" styles={{ }} />
+          </Col>
         </Row>
       </Container>
       <hr/>

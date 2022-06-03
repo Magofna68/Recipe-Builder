@@ -9,6 +9,21 @@
   color: gray;
   margin: 0 0% 0 0;
   background-position-x: center;
+  scroll-behavior: none;
+  overflow-y: hidden;
+  position: fixed;
+  overflow-x: visible;
+
+  h2{
+    margin-top: 75vh;
+    text-align: center;
+    font-family: 'Copperplate';
+  }
+  
+  h4{
+    text-align: center;
+    font-family: 'Copperplate';
+  }
 }
 
 header {
@@ -24,16 +39,7 @@ header {
   padding-top: 5%;
   font-family: 'Courier New';
 }
-h2{
-  margin-top: 75vh;
-  text-align: center;
-  font-family: 'Copperplate';
-}
 
-h4{
-  text-align: center;
-  font-family: 'Copperplate';
-}
 
 #lpIcon {
   color: black;
@@ -48,3 +54,4 @@ h4{
     transform: scale(1.2);
   }
 }
+
