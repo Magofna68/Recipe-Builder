@@ -51,16 +51,16 @@ var app = builder.Build();
 //}
 
 app.UseHttpsRedirection();
-//app.UseStaticFiles();
-//app.UseRouting();
+app.UseStaticFiles();
+app.UseRouting();
 
 //app.UseAuthentication();
 //app.UseIdentityServer();
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller}/{action}/{id?}");
+// app.MapControllerRoute(
+//     name: "default",
+//     pattern: "{controller}/{action}/{id?}");
 
 
 
@@ -74,15 +74,11 @@ app.MapControllerRoute(
 //    });
 //});
 
-//app.UseEndpoints(endpoints =>
-//{
-//    endpoints.MapControllerRoute(
-//        name: "api",
-//        pattern: " {controller}/{action=Index}/{id?}"
-//    );
-
-//    endpoints.MapRazorPages();
-//});
+app.UseEndpoints(endpoints =>
+{
+   endpoints.MapControllers();
+    
+});
 
 //app.MapFallbackToFile("index.html");
 
