@@ -109,8 +109,15 @@ export default function ReusableForm(props) {
                     />
                   }
                 </div>
-             </div>
+            </div>
           ))}
+                <div className='ingredientOutput'>
+                  {ingredientList.map((singleIngredient, index) => (
+                  <ul key={index}>
+                      {singleIngredient.ingredients && <li>{singleIngredient.ingredients}</li>}
+                  </ul>
+                    ))}
+                </div>
         </Form.Group>
 
         <Form.Group className="mb-3">
