@@ -1,0 +1,37 @@
+.ingredients{
+  display: flex;
+  margin-bottom: 10px;
+
+  .ingredientContain input{
+    width: 50vw;
+    display: flex;
+    margin: 0 5px 5px 0;
+
+    
+  }
+  .css-i4bv87-MuiSvgIcon-root{
+    display: flex;
+    fill: red;
+    height: 1.25em;
+    width: 1.25em;
+    cursor: pointer;
+    
+    &:hover{
+      background-color: gray;
+      border-radius: 100%;
+      border-color: red;
+      border: solid 3px;
+    }
+  }
+  .css-tzssek-MuiSvgIcon-root{
+    display: flex;
+    fill: black;
+    height: 1.25em;
+    width: 1.25em;
+
+    &:hover{
+      border-radius: 100%;
+      background-color: rgb(7, 194, 7);
+    }
+  }
+}
