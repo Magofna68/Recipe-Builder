@@ -9,6 +9,11 @@ import Form from 'react-bootstrap/Form';
 import MultipleSelectCheckmarks from './MealSelection';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveIcon from '@mui/icons-material/Remove';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
+
+
 
 export default function ReusableForm(props) {
   // const [ value, setValue ] = useState(null);
@@ -81,7 +86,9 @@ export default function ReusableForm(props) {
           <Form.Label>Ingredients:</Form.Label>
           <Form.Control type="text" name="ingredients" placeholder="What does the recipe call for?" />
         </Form.Group> */}
-
+        <Container>
+          <Row>
+            <Col>
         <Form.Group>
           <Form.Label>Ingredients:</Form.Label>
           {ingredientList.map((singleIngredient, index) => (
@@ -100,7 +107,7 @@ export default function ReusableForm(props) {
                   // </Button>
                   }
                 </div>
-                <div className='second-division'>
+                <div className='removeBtn'>
                   {ingredientList.length > 1 && 
                   <RemoveIcon fontsize="large" 
                     type="danger" 
@@ -111,6 +118,10 @@ export default function ReusableForm(props) {
                 </div>
             </div>
           ))}
+                  </Form.Group>
+          </Col>
+          <Col>
+                  <h6>Ingredients Added:</h6>
                 <div className='ingredientOutput'>
                   {ingredientList.map((singleIngredient, index) => (
                   <ul key={index}>
@@ -118,8 +129,9 @@ export default function ReusableForm(props) {
                   </ul>
                     ))}
                 </div>
-        </Form.Group>
-
+        </Col>
+        </Row>
+        </Container>
         <Form.Group className="mb-3">
           <Form.Label>Instructions:</Form.Label>
           <Form.Control as="textarea" rows={3} type="instructions" name="instructions" placeholder="What steps are required?" />
