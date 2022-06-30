@@ -14,7 +14,7 @@ export class Home extends Component {
       selectedRecipe: null,
       editing: false,
       formVisibleOnPage: false,
-      landingPage: true,
+      // landingPage: true,
       // mainRecipeList: [],
       mainRecipeList: [
         {
