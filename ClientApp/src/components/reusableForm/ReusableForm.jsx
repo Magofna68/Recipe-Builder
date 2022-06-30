@@ -12,16 +12,17 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
-
+import { useEffect } from 'react';
 
 
 export default function ReusableForm(props) {
+  
   // const [ value, setValue ] = useState(null);
   const [ ingredientList, setIngredientList ] = useState([
     {ingredients: ""},
   ]);
   console.log(ingredientList)
-
+  
   const handleIngredientAdd = () => {
     setIngredientList([...ingredientList, {ingredients: ""} ])
   }
@@ -31,13 +32,14 @@ export default function ReusableForm(props) {
     list.splice(index, 1);
     setIngredientList(list);
   }
-
   const handleIngredientChange = (e, index) => {
     const { name, value } = e.target
     const list = [...ingredientList];
     list[index][name] = value;
     setIngredientList(list);
   }
+
+   
 
   // const cuisineOriginArray = [
   //   {title: 'American', value: 'American'},
@@ -94,7 +96,7 @@ export default function ReusableForm(props) {
           {ingredientList.map((singleIngredient, index) => (
             <div key={index} className='ingredients'>
                <div className='ingredientContain'>
-                  <Form.Control type="text" name="ingredients" placeholder="What does the recipe call for?"  required
+                  <Form.Control type="text" id="ingredientInput" name="ingredients" placeholder="What does the recipe call for?"  required
                     value={singleIngredient.ingredients}
                     onChange={(e) => handleIngredientChange(e, index)}
                   />
