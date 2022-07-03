@@ -4,6 +4,7 @@
 
 .col{
   margin-bottom: 15px;
+  display:inline-block;
 }
 
 .ingredientContainer {
@@ -23,4 +24,18 @@
     cursor: pointer;
     color: rgb(255, 71, 71);
   }
+}
+
+#imageContainer{
+  display: flex;
+  margin: 10% 0 0 0;
+  max-width: 100%;
+}
+
+#recipeContain{
+  background-color: rgb(231, 229, 225);
+}
+
+#ratingFont{
+  font-size:medium;
 }

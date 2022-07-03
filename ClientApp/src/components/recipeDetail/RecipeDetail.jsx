@@ -14,15 +14,20 @@ export default function RecipeDetail(props) {
   // deconstruct props
   return (
     <>
-      <Container fluid>
+      <Container fluid id="recipeContain">
         <Row lg={true}>
           <Col>
             {/* <h1>Recipe Detail Page</h1> */}
-            <h1>{recipe.title}</h1><hr/>
             <div>
-              <h4>{recipe.rating} <StarIcon />{recipe.origin} dish - Enjoy it for {recipe.mealType} </h4>
+            <h1>{recipe.title}<span id="ratingFont">{recipe.rating} <StarIcon /></span></h1><hr/>
+              <h4>{recipe.origin} dish - Enjoy it for {recipe.mealType} </h4>
             </div>
             <br/>
+              </Col>
+          <Col>
+            <img src={recipe.img} alt="test" id="imageContainer" />
+          </Col>
+              </Row>
             <div className="ingredientContainer">
               <h4>Here's what you'll need:</h4>
               {/* <ul>{separatedIngredients.map((ingredient) => { */}
@@ -35,6 +40,8 @@ export default function RecipeDetail(props) {
               })}
               </ul>
             </div>
+
+            <Row>
             <h4>Instructions: </h4>
             <ol>
             {recipe.instructions.map((instructions) => {
@@ -53,10 +60,6 @@ export default function RecipeDetail(props) {
               variant="outline-danger" 
               onClick={()=> onClickingDelete(recipe.id)}>Delete Recipe</Button> */}
             <DeleteSharpIcon fontSize="large" onClick={()=> onClickingDelete(recipe.id)} />
-          </Col>
-          <Col>
-              <img src={recipe.img} alt="test" styles={{ }} />
-          </Col>
         </Row>
       </Container>
       <hr/>
